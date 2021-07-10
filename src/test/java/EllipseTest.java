@@ -1,7 +1,7 @@
+import Shapes.Circle;
+import Shapes.Ellipse;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class EllipseTest {
     @Test
@@ -41,7 +41,7 @@ class EllipseTest {
     @Test
     public void canGetCorrectName() {
         Ellipse ellipse = new Ellipse(3,4);
-        Assertions.assertEquals("Ellipse", ellipse.getName());
+        Assertions.assertEquals("Shapes.Ellipse", ellipse.getName());
     }
 }
 

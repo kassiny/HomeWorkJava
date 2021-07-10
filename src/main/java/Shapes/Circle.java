@@ -1,4 +1,4 @@
-import java.math.*;
+package Shapes;
 
 
 public class Circle implements Shape {
@@ -10,7 +10,7 @@ public class Circle implements Shape {
 
     @Override
     public String getName() {
-        return "Circle";
+        return "Shapes.Circle";
     }
 
     public Circle(double r) throws ArithmeticException {

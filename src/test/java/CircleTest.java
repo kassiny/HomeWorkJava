@@ -1,7 +1,6 @@
+import Shapes.Circle;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CircleTest {
     @Test
@@ -37,7 +36,7 @@ class CircleTest {
     public void canGetCorrectName() {
         Circle circle;
         circle = new Circle(10);
-        Assertions.assertEquals(circle.getName(), "Circle");
+        Assertions.assertEquals(circle.getName(), "Shapes.Circle");
     }
 
 }

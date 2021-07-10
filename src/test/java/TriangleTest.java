@@ -1,5 +1,4 @@
-import static org.junit.jupiter.api.Assertions.*;
-
+import Shapes.Triangle;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -49,7 +48,7 @@ class TriangleTest {
     @Test
     public void canGetCorrectName () {
         Triangle triangle = new Triangle(2,2,2);
-        Assertions.assertEquals("Triangle",triangle.getName());
+        Assertions.assertEquals("Shapes.Triangle",triangle.getName());
     }
 
 }

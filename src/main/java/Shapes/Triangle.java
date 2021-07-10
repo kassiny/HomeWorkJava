@@ -1,3 +1,5 @@
+package Shapes;
+
 public class Triangle implements Shape {
 
     double a,b,c;
@@ -9,7 +11,7 @@ public class Triangle implements Shape {
 
     @Override
     public String getName() {
-        return "Triangle";
+        return "Shapes.Triangle";
     }
     public Triangle(double a, double b, double c) {
         if (a<0 || b <0 || c<0) {

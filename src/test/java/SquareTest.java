@@ -1,7 +1,6 @@
+import Shapes.Square;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SquareTest {
 
@@ -37,7 +36,7 @@ class SquareTest {
     public void canGetCorrectName () {
         Square square;
         square = new Square(2);
-        Assertions.assertEquals("Square",square.getName());
+        Assertions.assertEquals("Shapes.Square",square.getName());
     }
 
 }

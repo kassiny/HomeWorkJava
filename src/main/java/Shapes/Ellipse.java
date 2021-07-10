@@ -1,3 +1,5 @@
+package Shapes;
+
 public class Ellipse implements Shape {
     double a,b;
     @Override
@@ -6,7 +8,7 @@ public class Ellipse implements Shape {
     }
     @Override
     public String getName() {
-        return "Ellipse";
+        return "Shapes.Ellipse";
     }
     public Ellipse(double a, double b) {
         if (a<0 || b<0) {

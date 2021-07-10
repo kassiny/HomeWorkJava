@@ -1,3 +1,5 @@
+package Shapes;
+
 public class Square implements Shape {
     double a;
 
@@ -7,7 +9,7 @@ public class Square implements Shape {
     }
     @Override
     public String getName() {
-        return "Square";
+        return "Shapes.Square";
     }
     public Square (double a) {
         if (a < 0) {

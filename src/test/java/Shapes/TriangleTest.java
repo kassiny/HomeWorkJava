@@ -1,3 +1,5 @@
+package Shapes;
+
 import Shapes.Triangle;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

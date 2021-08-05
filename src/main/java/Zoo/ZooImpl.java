@@ -9,7 +9,6 @@ public class ZooImpl implements Zoo {
     protected List<InhibitionLog> history;
     protected List<CageImpl> cages;
     protected Map<Animal, Integer> animals;
-    private Logger logger;
     private static ZooImpl zoo;
 
     public static ZooImpl getZoo() {
@@ -90,6 +89,14 @@ public class ZooImpl implements Zoo {
                 if (animalsCageNumber.equals(cage.getNumber())) {
                     cage.setVacant(true);
                     break;
+                }
+            }
+            //обновляем лог
+            for (InhibitionLog log:history
+                 ) {
+                if (log.getAnimalSpecies().equals(animal.getSpecies()) &&
+                        log.getAnimalName().equals(animal.getName()) && log.getCheckOutDate()==null) {
+                    log.updateCheckOutDate(new Date(System.currentTimeMillis()));
                 }
             }
             animals.remove(animal);

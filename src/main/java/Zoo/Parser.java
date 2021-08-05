@@ -7,6 +7,8 @@ import Zoo.Animals.Penguin;
 import Zoo.Animals.Squirell;
 import Zoo.Model.Animal;
 
+import java.util.List;
+
 public class Parser {
         public String doTheCommand(String command, ZooImpl zoo) throws IllegalArgumentException {
                 if (command == null) {
@@ -14,6 +16,25 @@ public class Parser {
                 }
                 command.trim();
                 String [] subcommands = command.split("\\s+");
+                if (subcommands[0].equals("log")) {
+
+                        List<InhibitionLog> history = zoo.getHistory();
+                        StringBuilder logResult = new StringBuilder();
+                        for (InhibitionLog log: history
+                             ) {
+                                logResult.append("Specie " + log.getAnimalSpecies().toString());
+                                logResult.append(" Name " + log.getAnimalName());
+                                logResult.append( " checkInDate " + log.getCheckInDate().toString());
+                                if (log.getCheckOutDate() == null) {
+                                        logResult.append(" CheckOutDate: still there");
+                                }
+                                else {
+                                     logResult.append(" checkOutDate " + log.getCheckOutDate().toString());
+                                }
+                                logResult.append("\n");
+                        }
+                        return logResult.toString();
+                }
                 if (subcommands.length < 3) {
                         return "ERROR: Incorrect command";
                 }
@@ -63,6 +84,7 @@ public class Parser {
                                return "ERROR: " + e.getMessage();
                         }
                 }
+
                 else {
                         return "ERROR: uknown command";
                 }

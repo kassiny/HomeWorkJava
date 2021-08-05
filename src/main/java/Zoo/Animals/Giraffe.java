@@ -6,4 +6,5 @@ public class Giraffe extends AbstactAnimal {
         super.name = name;
         super.specie = Species.GIRAFFE;
     }
+
 }

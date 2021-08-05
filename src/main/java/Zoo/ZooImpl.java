@@ -62,16 +62,21 @@ public class ZooImpl implements Zoo {
             throw new IllegalArgumentException("that animal already lives here");
         }
         //ищем клетку
+        boolean foundCage = false;
         for (CageImpl cage: cages
              ) {
             if(cage.isVacantCage() &&
-                    cage.getCondition().isAvailableFor().contains(animal)) {
+                    cage.getCondition().isAvailableFor().contains(animal.getSpecies())) {
                 animals.put(animal,cage.number);
                 cage.setVacant(false);
                 cages.get(cages.indexOf(cage)).setVacant(false);
+                foundCage = true;
                 history.add(new InhibitionLog(new Date(System.currentTimeMillis()),
                         null, animal.getSpecies(),animal.getName() ));
             }
+        }
+        if (!foundCage) {
+            throw new IllegalArgumentException("No free cage for such animal");
         }
 
     }
@@ -79,7 +84,7 @@ public class ZooImpl implements Zoo {
     @Override
     public void checkOutAnimal(Animal animal) {
         Integer animalsCageNumber = animals.get(animal);
-        if (animals.values().contains(animal)) {
+        if (animals.containsKey(animal)) {
             for (CageImpl cage: cages
                  ) {
                 if (animalsCageNumber.equals(cage.getNumber())) {
